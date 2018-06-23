@@ -117,3 +117,5 @@ D:\ASP.NET Projects\Vidly\Vidly\bin\Microsoft.AI.WindowsServer.xml
 D:\ASP.NET Projects\Vidly\Vidly\bin\Microsoft.AI.Web.xml
 D:\ASP.NET Projects\Vidly\Vidly\obj\Debug\Vidly.dll
 D:\ASP.NET Projects\Vidly\Vidly\obj\Debug\Vidly.pdb
+D:\ASP.NET Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitialModel.resources
+D:\ASP.NET Projects\Vidly\Vidly\obj\Debug\Vidly.csproj.GenerateResource.Cache

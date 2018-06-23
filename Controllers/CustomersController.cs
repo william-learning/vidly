@@ -15,8 +15,8 @@ namespace Vidly.Controllers
         {
             var customer = new List<Customer>
             {
-                new Customer {Name = "John Smith"},
-                new Customer {Name = "Mary Williams"}
+                new Customer {Name = "John Smith", Id = 1},
+                new Customer {Name = "Mary Williams", Id = 2}
             };
             // ViewBag.Message = "Customers can be found here.";
 
@@ -25,6 +25,25 @@ namespace Vidly.Controllers
                 Customers = customer
             };
             return View(viewModel);
+        }
+
+        [Route("Customers/Details/{id}")]
+        public ActionResult Details(int id)
+        {
+            var customer = new List<Customer>
+            {
+                new Customer {Name = "John Smith", Id = 1},
+                new Customer {Name = "Mary Williams", Id = 2}
+            };
+
+            if (id > customer.Count)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                return View(customer.Find(x => x.Id == id));
+            }
         }
     }
 }

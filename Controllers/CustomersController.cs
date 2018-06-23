@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Vidly.Models;
+using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
@@ -11,9 +13,18 @@ namespace Vidly.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            ViewBag.Message = "Customers can be found here.";
+            var customer = new List<Customer>
+            {
+                new Customer {Name = "John Smith"},
+                new Customer {Name = "Mary Williams"}
+            };
+            // ViewBag.Message = "Customers can be found here.";
 
-            return View();
+            var viewModel = new CustomerViewModel
+            {
+                Customers = customer
+            };
+            return View(viewModel);
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
+using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
@@ -12,9 +13,18 @@ namespace Vidly.Controllers
         // GET: Movies
         public ActionResult Index()
         {
-            var movie = new Movie() { Name = "Shrek!" };
+            var movie = new List<Movie>
+            {
+                new Movie { Name = "Shrek" },
+                new Movie { Name = "Wall-e"}
+            };
 
-            return View(movie);
+            var viewModel = new MovieViewModel
+            {
+                MovViewMod = movie
+            };
+
+            return View(viewModel);
         }
     }
 }
